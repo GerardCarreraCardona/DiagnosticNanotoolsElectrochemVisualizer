@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <link href="styles.css" rel="stylesheet">
+        <script src="main.js"></script>
+        <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+        <title>DIAGNOSTIC NANOTOOLS DATA READER</title>
+    </head>
+    <body onload="load()">
+        <h1>DIAGNOSTIC NANOTOOLS DATA READER</h1>
+        <input type="file" id="file1" accept=".mta,.mtc">
+        <div id="tester" style="width:600px;height:60%;"></div>
+        <div id="values">
+            <h2>x value:</h2>
+            <input type="text" id ="value">
+        </div>
+        <table id="myTable"></table>
+    </body>
+</html>

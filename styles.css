@@ -1,0 +1,38 @@
+h1{
+    justify:center;
+    text-align:center;
+}
+table {
+    border-collapse: collapse;
+    border-style:solid;
+    visibility: hidden;
+}
+tr,td{
+    border-collapse: collapse;
+    border-style:solid;
+}
+body{
+    background:#EDEADE;
+    font-family:'Sofia Sans', sans-serif;
+    display:flex;
+    flex-direction:column;
+    color:#36454F;
+    min-height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+#values{
+    padding:5px;
+    visibility: hidden;
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+}
+#file1{
+    text-align: center;
+    padding:10px;
+}
+#value{
+    height:fit-content;
+}
