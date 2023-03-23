@@ -8,13 +8,13 @@ let ys = [];
 let plt;
 var layout;
 let deltaX = 0;
-let value;
+let valueHolder;
 var table;
 function load(){
     // when the body of the page is loaded, an event listener is attached to the file input
     input = document.getElementById("file1");
-    value = document.getElementById("value");
-    value.addEventListener('change', updateTable);
+    valueHolder = document.getElementById("value");
+    valueHolder.addEventListener('input', updateValue);
     table = document.getElementById("myTable");
     // the event listener triggers when the file changes and calls the read function
     input.addEventListener('change', read);
@@ -75,9 +75,7 @@ function parse(fileString){
             spikesnap : 'cursor',
             showline:true,
             showgrid:true,
-            fixedrange: true
         },
-        yaxis: {fixedrange: true}
     }
     Plotly.newPlot(plt,traces,layout,{displayModeBar: false})
     plt.on('plotly_click', function(data){
@@ -86,7 +84,7 @@ function parse(fileString){
             dX = data.points[i].x;
         }
         deltaX = dX;
-        value.value = deltaX;
+        valueHolder.value = deltaX;
         updateTable();
     });
 }
@@ -132,4 +130,10 @@ function updateTable(){
         }
     }
     table.style.visibility = "visible";
+}
+
+function updateValue(){
+    console.log("value changed");
+    deltaX =parseFloat(valueHolder.value);
+    updateTable();
 }
