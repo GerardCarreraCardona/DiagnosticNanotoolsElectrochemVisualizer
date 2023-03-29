@@ -123,13 +123,20 @@ function updateTable(){
         var cell1 = row.insertCell(0);
         cell1.innerHTML = names[i];
         var cell2 = row.insertCell(1);
-        cell2.innerHTML = ys[i][xs[i].indexOf(deltaX)];
+        var content = ys[i][xs[i].indexOf(deltaX)];
+        cell2.innerHTML = content;
         if(extension=="mtc"){
             var cell3 = row.insertCell(2);
             cell3.innerHTML = ys[i][xs[i].lastIndexOf(deltaX)];
         }
+        if (typeof content == 'undefined'){
+            table.style.visibility = "hidden";
+            document.getElementById("message").style.visibility = "visible";
+            return;
+        }
     }
     table.style.visibility = "visible";
+    document.getElementById("message").style.visibility = "hidden";
 }
 
 function updateValue(){
