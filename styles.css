@@ -36,3 +36,6 @@ body{
 #value{
     height:fit-content;
 }
+#message{
+    visibility:hidden;
+}
